@@ -18,11 +18,11 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        pip install pyexcel-xls
-        pip uninstall xlrd
-        pip install xlrd==1.2.0
+
     - name: Get Data
       run: |
+        pip install pyexcel-xls
+        pip install xlrd==1.2.0
         python getstocksinfo.py
         python extractData.py
     - name: Read File to Var
