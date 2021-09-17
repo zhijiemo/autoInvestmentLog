@@ -2,8 +2,8 @@ name: Get All Data
 
 on:
   issues:
-  # schedule:
-  #  - cron: 0 13 * * *
+  schedule:
+   - cron: 0 13 * * *
 
 jobs:
   Get_And_Extract_Data:
@@ -21,13 +21,17 @@ jobs:
         pip install pyexcel-xls
         pip install xlrd==1.2.0
 
-    - name: Get Data
+#     - name: Get Data
+#       run: |
+#         python getstocksinfo.py
+#          git add A_data.xlsx
+#     - name: extract Data
+#       run: |
+#         python extractData.py
+    - name: GetAndExtrac Data
       run: |
-        python getstocksinfo.py
-         git add A_data.xlsx
-    - name: extract Data
-      run: |
-        python extractData.py
+        python GetAndExtract.py
+
     - name: Read File to Var
       id: rdFile
       uses: juliangruber/read-file-action@v1.0.0
