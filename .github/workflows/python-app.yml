@@ -23,9 +23,9 @@ jobs:
 
     - name: Get Data
       run: |
-        pip install pyexcel-xls
-        pip install xlrd==1.2.0
         python getstocksinfo.py
+    - name: extract Data
+      run: |
         python extractData.py
     - name: Read File to Var
       id: rdFile
