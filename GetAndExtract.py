@@ -40,7 +40,8 @@ try:
                     , vhdp='上涨' if float(price_change_percent) >= 0 else '下跌', price_change_percent=abs(float(price_change_percent)))
     except:
         continue
-with open(Outfilename, 'w', encoding='utf-8') as f:
+# with open(Outfilename, 'w', encoding='utf-8') as f:
+with open('todayData.txt', 'w', encoding='utf-8') as f:
     f.write(report)
 except:
     pass
