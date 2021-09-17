@@ -24,6 +24,7 @@ jobs:
     - name: Get Data
       run: |
         python getstocksinfo.py
+         git add A_data.xlsx
     - name: extract Data
       run: |
         python extractData.py
