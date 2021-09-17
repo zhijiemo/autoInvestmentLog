@@ -22,8 +22,6 @@ try:
     df_Stock = ak.stock_zh_a_spot()
     df_Stock.to_excel(localtime + '/A_data.xlsx')
     for stock_code in stocks_codes_list:
-    if stock_code == '':
-        continue
     try:
         df_temp = df_stocks[df_stocks['代码'] .str.contains(stock_code)].reset_index(drop=True)
         name = df_temp['名称'][0]
