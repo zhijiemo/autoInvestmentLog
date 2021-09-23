@@ -20,8 +20,10 @@ if not os.path.exists(localtime):
     os.mkdir(localtime)
 try:
     df_Stock = ak.stock_zh_a_spot()
-    df_Stock.to_excel(localtime + '/A_data.xlsx')
+#     df_Stock.to_excel(localtime + '/A_data.xlsx')
     for stock_code in stocks_codes_list:
+        if stock_code == '':
+            continue
     try:
         df_temp = df_stocks[df_stocks['代码'] .str.contains(stock_code)].reset_index(drop=True)
         name = df_temp['名称'][0]
@@ -38,6 +40,8 @@ try:
                     , vhdp='上涨' if float(price_change_percent) >= 0 else '下跌', price_change_percent=abs(float(price_change_percent)))
     except:
         continue
+except:
+    pass
 # with open(Outfilename, 'w', encoding='utf-8') as f:
 with open('todayData.txt', 'w', encoding='utf-8') as f:
     f.write(report)
