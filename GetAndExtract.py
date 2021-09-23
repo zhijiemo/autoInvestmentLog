@@ -25,7 +25,7 @@ try:
         if stock_code == '':
             continue
         try:
-            df_temp = df_stocks[df_stocks['代码'].str.contains(stock_code)].reset_index(drop=True)
+            df_temp = df_Stocks[df_Stocks['代码'].str.contains(stock_code)].reset_index(drop=True)
             name = df_temp['名称'][0]
             current_price = df_temp['最新价'][0]
             price_change = df_temp['涨跌额'][0]
