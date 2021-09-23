@@ -43,12 +43,12 @@ jobs:
         key: ${{ secrets.sckey }}
         text: 今日数据
         desp: ${{ steps.rdFile.outputs.content }}
-    - name: Commit
-      run: |
-        git config --global user.email johnhaung@163.com
-        git config --global user.name huanghaozi
-        git add .
-        git commit -m "UPDATE DATA by github actions" -a
+#     - name: Commit
+#       run: |
+#         git config --global user.email johnhaung@163.com
+#         git config --global user.name huanghaozi
+#         git add .
+#         git commit -m "UPDATE DATA by github actions" -a
     - name: GitHub Push
       uses: ad-m/github-push-action@master
       with:
