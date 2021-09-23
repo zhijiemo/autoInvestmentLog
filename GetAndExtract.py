@@ -45,7 +45,5 @@ except:
 # with open(Outfilename, 'w', encoding='utf-8') as f:
 with open('todayData.txt', 'w', encoding='utf-8') as f:
     f.write(report)
-except:
-    pass
 
 time.sleep(10)
